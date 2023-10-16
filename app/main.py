@@ -1,6 +1,6 @@
 import streamlit as st
 import PyPDF2
-from database.models import store_document
+from app.database.models import store_document
 
 # Set the title and description of the app
 st.title("Document Search and Storage App")

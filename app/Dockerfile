@@ -13,9 +13,6 @@ RUN pip install -r requirements.txt
 # Copy the current directory contents into the container at /app
 COPY . /app/
 
-# Copy the database directory into the container at /app
-COPY database/ /app/database/
-
 # Expose the port that the app will run on
 EXPOSE 8501
 
