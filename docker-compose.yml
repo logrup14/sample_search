@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: search
+      POSTGRES_USER: logan
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+
+  streamlit:
+    build:
+      context: ./app
+    volumes:
+      - ./app:/app
+      - ./database:/app/database
+
+    ports:
+      - "8501:8501"
+    depends_on:
+      - db
